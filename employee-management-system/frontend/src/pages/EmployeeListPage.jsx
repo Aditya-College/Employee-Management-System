@@ -39,8 +39,15 @@ function EmployeeListPage() {
   return (
     <div className="page">
       <div className="page-header">
-        <h1>Employee directory</h1>
-        <p className="page-subtitle">{employees.length} {employees.length === 1 ? 'employee' : 'employees'} on record</p>
+        <div>
+          <span className="eyebrow">Team workspace</span>
+          <h1>Employee directory</h1>
+          <p className="page-subtitle">Keep everyone&apos;s contact details organised in one place.</p>
+        </div>
+        <div className="employee-count">
+          <strong>{employees.length}</strong>
+          <span>{employees.length === 1 ? 'team member' : 'team members'}</span>
+        </div>
       </div>
 
       {error && <div className="alert alert-error">{error}</div>}

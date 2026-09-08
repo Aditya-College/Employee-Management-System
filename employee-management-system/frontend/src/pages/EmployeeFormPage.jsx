@@ -77,15 +77,25 @@ function EmployeeFormPage() {
   return (
     <div className="page">
       <div className="page-header">
+        <div>
+        <span className="eyebrow">{isEditMode ? 'Employee profile' : 'Build your team'}</span>
         <h1>{isEditMode ? 'Edit employee' : 'Add employee'}</h1>
         <p className="page-subtitle">
           {isEditMode ? 'Update the details below and save your changes.' : 'Fill in the details to add someone to the directory.'}
         </p>
+        </div>
       </div>
 
       {error && <div className="alert alert-error">{error}</div>}
 
       <form className="employee-form" onSubmit={handleSubmit}>
+        <div className="form-intro">
+          <span className="form-step">01</span>
+          <div>
+            <h2>Employee details</h2>
+            <p>All fields are required and visible in the directory.</p>
+          </div>
+        </div>
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="name">Full name</label>

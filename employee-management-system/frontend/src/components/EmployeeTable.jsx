@@ -26,10 +26,18 @@ function EmployeeTable({ employees, onDelete }) {
         <tbody>
           {employees.map((employee) => (
             <tr key={employee._id}>
-              <td data-label="Name">{employee.name}</td>
-              <td data-label="Employee ID">{employee.employeeId}</td>
-              <td data-label="Email">{employee.email}</td>
-              <td data-label="Department">{employee.department}</td>
+              <td data-label="Name" className="employee-name-cell">
+                <span className="employee-avatar" aria-hidden="true">
+                  {employee.name.split(' ').map((part) => part[0]).slice(0, 2).join('').toUpperCase()}
+                </span>
+                <span>
+                  <strong>{employee.name}</strong>
+                  <small>{employee.email}</small>
+                </span>
+              </td>
+              <td data-label="Employee ID"><code>{employee.employeeId}</code></td>
+              <td data-label="Email" className="email-cell">{employee.email}</td>
+              <td data-label="Department"><span className="department-tag">{employee.department}</span></td>
               <td data-label="Phone">{employee.phone}</td>
               <td data-label="Actions" className="actions-cell">
                 <Link to={`/edit/${employee._id}`} className="btn btn-edit">

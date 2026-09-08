@@ -4,12 +4,16 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="navbar-brand">
-        Employee Manager
+        <span className="brand-mark" aria-hidden="true">EM</span>
+        <span>
+          <span className="brand-name">Employee Manager</span>
+          <span className="brand-caption">People directory</span>
+        </span>
       </Link>
       <nav className="navbar-links">
-        <Link to="/">Directory</Link>
+        <Link to="/" className="navbar-directory">Directory</Link>
         <Link to="/add" className="navbar-add-btn">
-          Add employee
+          <span aria-hidden="true">+</span> Add employee
         </Link>
       </nav>
     </header>
